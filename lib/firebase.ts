@@ -28,5 +28,5 @@ export const auth = firebaseApp ? getAuth(firebaseApp) : null;
 export const db = firebaseApp ? getFirestore(firebaseApp) : null;
 
 export function getFirebaseSetupMessage() {
-  return "Firebase is not configured yet. Add your project credentials to .env.local before using authentication or Firestore.";
+  return "Firebase is not configured yet. Add your project credentials to .env.local or .env.production.local before using authentication or Firestore.";
 }
