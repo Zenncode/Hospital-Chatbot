@@ -1,0 +1,167 @@
+[
+  {
+    "id": "faq_001",
+    "question": "How do I book an appointment?",
+    "answer": "You can request an appointment by signing in as a patient, opening the appointments page, and selecting your preferred department and date.",
+    "category": "Appointments",
+    "keywords": ["appointment", "book", "schedule", "doctor", "request"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_002",
+    "question": "What are your opening hours?",
+    "answer": "The hospital is open daily from 8:00 AM to 8:00 PM. Emergency services remain available 24 hours a day.",
+    "category": "General Information",
+    "keywords": ["hours", "open", "opening", "schedule", "time"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_003",
+    "question": "What are the visiting hours?",
+    "answer": "General visiting hours are 10:00 AM to 6:00 PM daily. Critical care areas may follow stricter visitor limits.",
+    "category": "Visitors",
+    "keywords": ["visiting", "visitor", "visit", "hours"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_004",
+    "question": "Where is the emergency department?",
+    "answer": "The emergency department is on the ground floor beside the main entrance and is clearly marked for walk-in and ambulance access.",
+    "category": "Emergency",
+    "keywords": ["emergency", "er", "ed", "location", "entrance"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_005",
+    "question": "What services does the cardiology department offer?",
+    "answer": "Cardiology offers consultations, ECG services, cardiac risk assessment, follow-up visits, and referral coordination for heart-related care.",
+    "category": "Departments",
+    "keywords": ["cardiology", "heart", "services", "department"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_006",
+    "question": "How can I contact the hospital?",
+    "answer": "You can contact the hospital by phone at +63 912 123 4567 or by email at hello@harborview-demo-hospital.test.",
+    "category": "Contact and Location",
+    "keywords": ["contact", "phone", "email", "call", "reach"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_007",
+    "question": "Do I need an account to request an appointment?",
+    "answer": "Yes. Patients need a signed-in account so the hospital can attach the request to the correct patient profile.",
+    "category": "Appointments",
+    "keywords": ["account", "login", "appointment", "request", "patient"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_008",
+    "question": "Where is the laboratory located?",
+    "answer": "The laboratory is on the first floor beside Radiology and accepts walk-in diagnostic requests during standard service hours.",
+    "category": "Laboratory",
+    "keywords": ["laboratory", "lab", "location", "test", "diagnostic"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_009",
+    "question": "Is the pharmacy open on weekends?",
+    "answer": "Yes. The pharmacy is open on weekends from 9:00 AM to 5:00 PM for routine prescriptions and discharge medication pickup.",
+    "category": "Pharmacy",
+    "keywords": ["pharmacy", "weekends", "open", "medicine"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_010",
+    "question": "What should I do if I have chest pain?",
+    "answer": "If you have chest pain, go to the emergency department immediately or contact local emergency services. This chatbot does not provide medical diagnosis.",
+    "category": "Symptom Guidance",
+    "keywords": ["chest pain", "pain", "emergency", "heart", "symptom"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_011",
+    "question": "Can visitors enter the ICU?",
+    "answer": "ICU visits are limited and require approval from the care team or nursing station. Please check at the front desk before visiting.",
+    "category": "Visitors",
+    "keywords": ["icu", "visitor", "visit", "restriction", "policy"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_012",
+    "question": "How do I log in as a patient?",
+    "answer": "Open the login page, enter your registered email address and password, then continue to your patient account.",
+    "category": "General Information",
+    "keywords": ["login", "patient", "sign in", "account", "auth"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_013",
+    "question": "Can I cancel or reschedule my appointment?",
+    "answer": "Yes. You can cancel or request a new date from the appointments page or ask hospital support to assist with changes.",
+    "category": "Appointments",
+    "keywords": ["cancel", "reschedule", "appointment", "change"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_014",
+    "question": "What departments are available in the hospital?",
+    "answer": "The hospital includes Emergency, Cardiology, Pediatrics, Orthopedics, Neurology, Radiology, Pharmacy, Laboratory, Internal Medicine, and Outpatient Services.",
+    "category": "Departments",
+    "keywords": ["departments", "available", "services", "hospital"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "faq_015",
+    "question": "Who can access the admin panel?",
+    "answer": "Only authorized admin users can access the admin panel and manage hospital website content.",
+    "category": "General Information",
+    "keywords": ["admin", "panel", "access", "administrator", "role"],
+    "status": "active",
+    "priority": 1,
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  }
+]

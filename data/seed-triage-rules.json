@@ -1,0 +1,68 @@
+[
+  {
+    "id": "triage_001",
+    "symptomKeyword": "chest pain",
+    "urgency": "emergency",
+    "guidance": "If you have chest pain, go to the emergency department immediately or contact local emergency services.",
+    "emergencyFlag": true,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "triage_002",
+    "symptomKeyword": "difficulty breathing",
+    "urgency": "emergency",
+    "guidance": "Difficulty breathing may require urgent care. Please seek emergency help immediately.",
+    "emergencyFlag": true,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "triage_003",
+    "symptomKeyword": "severe bleeding",
+    "urgency": "emergency",
+    "guidance": "Severe bleeding needs emergency attention. Go to the emergency department or call emergency services now.",
+    "emergencyFlag": true,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "triage_004",
+    "symptomKeyword": "high fever",
+    "urgency": "moderate",
+    "guidance": "Please monitor your temperature, rest, stay hydrated, and contact the hospital if the fever persists or becomes worse.",
+    "emergencyFlag": false,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "triage_005",
+    "symptomKeyword": "vomiting",
+    "urgency": "moderate",
+    "guidance": "If vomiting continues, contact a clinician or request an appointment for further evaluation.",
+    "emergencyFlag": false,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "triage_006",
+    "symptomKeyword": "headache",
+    "urgency": "low",
+    "guidance": "For persistent or worsening headache symptoms, please arrange a consultation with the appropriate department.",
+    "emergencyFlag": false,
+    "disclaimer": "This chatbot does not provide diagnosis or prescriptions.",
+    "status": "active",
+    "createdAt": "2026-04-22T00:00:00.000Z",
+    "updatedAt": "2026-04-22T00:00:00.000Z"
+  }
+]

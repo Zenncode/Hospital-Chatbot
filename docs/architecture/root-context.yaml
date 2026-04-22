@@ -1,0 +1,225 @@
+project:
+  name: Hospital Chatbot System
+  type: FAQ website with fixed-response chatbot
+  domain: Healthcare / Demo Hospital
+  status: Planning
+
+summary:
+  description: >
+    Hospital Chatbot System is a demo hospital FAQ website with a fixed-answer chatbot.
+    It helps users find hospital information, understand services, view departments,
+    learn visitor rules, request appointment guidance, and receive basic symptom triage guidance.
+  chatbot_mode: fixed_faq_answers_only
+  ai_freeform_generation: false
+  hospital_type: fictional_demo
+
+objectives:
+  - Provide fast answers to common hospital-related questions
+  - Help patients understand how to book appointments
+  - Show department information and service availability
+  - Guide visitors with schedules, policies, and directions
+  - Offer safe, non-diagnostic symptom triage guidance
+  - Reduce repetitive manual inquiries through structured FAQs
+
+users:
+  roles:
+    - guest
+    - patient
+    - admin
+  permissions:
+    guest:
+      - view_public_pages
+      - browse_faqs
+      - use_chatbot
+      - view_departments
+      - view_contact_details
+    patient:
+      - view_public_pages
+      - browse_faqs
+      - use_chatbot
+      - view_departments
+      - view_contact_details
+      - login
+      - request_appointments
+      - manage_profile_basics
+      - view_appointment_information
+    admin:
+      - login
+      - access_dashboard
+      - manage_faqs
+      - manage_chatbot_responses
+      - manage_departments
+      - manage_appointments
+      - manage_contact_information
+      - manage_user_accounts
+      - view_basic_analytics
+
+features:
+  public_website:
+    - home_page
+    - about_page
+    - faq_page
+    - departments_page
+    - contact_page
+    - login_page
+  chatbot:
+    - fixed_faq_matching
+    - category_based_responses
+    - appointment_guidance
+    - department_information_lookup
+    - visitor_guidance
+    - basic_symptom_triage_guidance
+    - emergency_escalation_messages
+    - fallback_response_when_no_match
+  admin_panel:
+    - faq_management
+    - chatbot_response_management
+    - department_management
+    - appointment_management
+    - contact_information_management
+    - user_management
+  authentication:
+    - guest_access_for_public_content
+    - patient_login
+    - admin_login
+
+chatbot_scope:
+  supported_topics:
+    - hospital_hours
+    - appointment_booking_process
+    - department_information
+    - visitor_policies
+    - emergency_department_guidance
+    - contact_details
+    - location_and_directions
+    - laboratory_information
+    - pharmacy_information
+    - symptom_guidance
+  response_type: fixed_answers_only
+  triage_policy:
+    mode: basic_guidance_only
+    diagnosis_allowed: false
+    prescription_allowed: false
+    urgency_levels:
+      - low
+      - moderate
+      - emergency
+    emergency_rule: >
+      If symptoms appear severe or urgent, instruct the user to go to the emergency
+      department or contact emergency services or hospital staff immediately.
+    disclaimer: >
+      This chatbot does not provide medical diagnosis. It only gives general
+      hospital guidance and safety-based recommendations.
+
+content:
+  faq_categories:
+    - General Information
+    - Appointments
+    - Departments
+    - Visitors
+    - Emergency
+    - Billing and Insurance
+    - Laboratory
+    - Pharmacy
+    - Contact and Location
+    - Symptom Guidance
+  departments:
+    - Emergency
+    - Cardiology
+    - Pediatrics
+    - Orthopedics
+    - Neurology
+    - Radiology
+    - Pharmacy
+    - Laboratory
+    - Internal Medicine
+    - Outpatient Services
+
+pages:
+  - name: Home
+    purpose: Introduce the hospital system and provide quick navigation
+  - name: About
+    purpose: Describe the demo hospital and chatbot purpose
+  - name: FAQ
+    purpose: List categorized frequently asked questions and answers
+  - name: Departments
+    purpose: Show hospital departments and services
+  - name: Contact
+    purpose: Display address, phone, email, and directions
+  - name: Login
+    purpose: Allow patient and admin authentication
+  - name: Admin Panel
+    purpose: Manage site content and chatbot knowledge base
+
+sample_questions:
+  - How do I book an appointment?
+  - What are your opening hours?
+  - What are the visiting hours?
+  - Where is the emergency department?
+  - What services does the cardiology department offer?
+  - How can I contact the hospital?
+  - Do I need an account to request an appointment?
+  - Where is the laboratory located?
+  - Is the pharmacy open on weekends?
+  - What should I do if I have chest pain?
+  - Can visitors enter the ICU?
+  - How do I log in as a patient?
+  - Can I cancel or reschedule my appointment?
+  - What departments are available in the hospital?
+  - Who can access the admin panel?
+
+tech_stack:
+  frontend:
+    - Next.js
+    - React
+  backend:
+    - Node.js
+  database:
+    - Firebase Firestore
+  authentication:
+    - Firebase Authentication
+  hosting:
+    - Firebase Hosting
+  optional_services:
+    - Firebase Storage
+
+data_collections:
+  - users
+  - faqs
+  - departments
+  - appointments
+  - triage_rules
+  - contact_info
+  - chatbot_settings
+
+non_functional_requirements:
+  - responsive_design
+  - accessible_ui
+  - fast_faq_retrieval
+  - secure_role_based_access_control
+  - clear_medical_disclaimer
+  - easy_admin_content_management
+
+constraints:
+  - fixed_response_chatbot_only
+  - no_ai_generated_medical_diagnosis
+  - no_prescription_advice
+  - demo_hospital_data_only
+  - no_sensitive_real_patient_data
+
+future_enhancements:
+  - faq_search_bar
+  - appointment_history
+  - admin_analytics_dashboard
+  - multilingual_support
+  - staff_portal
+  - smarter_keyword_matching
+
+status_notes:
+  current_phase: project_setup
+  next_steps:
+    - create_firebase_schema
+    - build_page_structure
+    - implement_chatbot_matching_logic
+    - create_admin_dashboard
+    - seed_demo_faq_data

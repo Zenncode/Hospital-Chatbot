@@ -1,0 +1,128 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isPatient() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'patient';
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidUserRole() {
+      return request.resource.data.role in ['patient', 'admin'];
+    }
+
+    function hasOnlyUserEditableFields() {
+      return request.resource.data.diff(resource.data).changedKeys().hasOnly([
+        'fullName',
+        'phone',
+        'updatedAt'
+      ]);
+    }
+
+    function isValidAppointmentStatus() {
+      return request.resource.data.status in [
+        'pending',
+        'approved',
+        'rejected',
+        'completed',
+        'cancelled'
+      ];
+    }
+
+    function isPublicFaq() {
+      return resource.data.status == 'active';
+    }
+
+    function isPublicDepartment() {
+      return resource.data.status == 'active';
+    }
+
+    function isActiveTriageRule() {
+      return resource.data.status == 'active';
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+
+      allow create: if isSignedIn()
+        && isOwner(userId)
+        && isValidUserRole()
+        && request.resource.data.uid == request.auth.uid;
+
+      allow update: if (
+          isOwner(userId)
+          && request.resource.data.uid == resource.data.uid
+          && request.resource.data.role == resource.data.role
+          && request.resource.data.email == resource.data.email
+          && hasOnlyUserEditableFields()
+        )
+        || isAdmin();
+
+      allow delete: if isAdmin();
+    }
+
+    match /faqs/{faqId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /departments/{departmentId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /contact_info/{contactId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /chatbot_settings/{settingId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /triage_rules/{ruleId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /appointments/{appointmentId} {
+      allow create: if isSignedIn()
+        && (isPatient() || isAdmin())
+        && request.resource.data.patientUid == request.auth.uid
+        && isValidAppointmentStatus();
+
+      allow read: if isAdmin()
+        || (isSignedIn() && resource.data.patientUid == request.auth.uid);
+
+      allow update: if isAdmin()
+        || (
+          isSignedIn()
+          && resource.data.patientUid == request.auth.uid
+          && request.resource.data.patientUid == resource.data.patientUid
+          && request.resource.data.status in ['pending', 'cancelled']
+        );
+
+      allow delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
