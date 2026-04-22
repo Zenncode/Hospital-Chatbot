@@ -38,7 +38,6 @@ hospital-chatbot-system/
 |-- app/
 |   |-- about/page.tsx
 |   |-- admin/page.tsx
-|   |-- api/chatbot/route.ts
 |   |-- appointments/page.tsx
 |   |-- contact/page.tsx
 |   |-- departments/page.tsx
@@ -393,4 +392,4 @@ If you are customizing behavior after setup, start with:
 - This is a fictional demo hospital project.
 - Firebase is optional for first render because the app falls back to demo content when config is missing.
 - Authentication and real writes require Firebase credentials and enabled Firebase services.
-- The `app/api/chatbot/route.ts` endpoint returns the same fixed matching logic for backend-style integration examples.
+- The chatbot UI runs the fixed matching logic directly in the client through `components/Chatbot.tsx` and `lib/chatbot.ts`.
