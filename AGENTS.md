@@ -49,6 +49,14 @@ Build and maintain a fictional hospital website with a fixed-response chatbot, F
    - `docs/ai/skills.md`
    - `docs/ai/workflow.md`
 
+## Operational Skills
+
+Use these repo-local skills when the task is command-heavy:
+
+- `.agents/skills/github-repo-operations/SKILL.md` for `gh auth login`, remote setup, repo creation, and pushing `main`, `develop`, or `prod`
+- `.agents/skills/firebase-deployment-operations/SKILL.md` for Firebase or `gcloud` auth, project access, alias checks, Hosting links, and deploy troubleshooting
+- `.agents/skills/project-verification-commands/SKILL.md` for repo validation, `npm` checks, release-readiness, and command-based status reporting
+
 ## Change Expectations
 
 ### Frontend

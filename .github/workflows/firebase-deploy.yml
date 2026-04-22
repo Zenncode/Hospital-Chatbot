@@ -45,6 +45,8 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     environment: staging
+    env:
+      FIREBASE_SERVICE_ACCOUNT_DEV_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
 
     steps:
       - name: Checkout
@@ -62,7 +64,19 @@ jobs:
       - name: Enable Firebase web frameworks support
         run: npx firebase-tools experiments:enable webframeworks
 
+      - name: Skip deploy when Firebase dev service account secret is missing
+        if: env.FIREBASE_SERVICE_ACCOUNT_DEV_JSON == ''
+        run: echo "Skipping Firebase dev deploy because FIREBASE_SERVICE_ACCOUNT_DEV is not configured."
+
       - name: Deploy to Firebase dev project
+        if: env.FIREBASE_SERVICE_ACCOUNT_DEV_JSON != ''
+        env:
+          NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ format('{0}.firebaseapp.com', secrets.FIREBASE_PROJECT_DEV) }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_DEV }}
+          NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ format('{0}.firebasestorage.app', secrets.FIREBASE_PROJECT_DEV) }}
+          NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+          NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
@@ -75,6 +89,8 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     environment: production
+    env:
+      FIREBASE_SERVICE_ACCOUNT_PROD_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}
 
     steps:
       - name: Checkout
@@ -92,7 +108,19 @@ jobs:
       - name: Enable Firebase web frameworks support
         run: npx firebase-tools experiments:enable webframeworks
 
+      - name: Skip deploy when Firebase prod service account secret is missing
+        if: env.FIREBASE_SERVICE_ACCOUNT_PROD_JSON == ''
+        run: echo "Skipping Firebase prod deploy because FIREBASE_SERVICE_ACCOUNT_PROD is not configured."
+
       - name: Deploy to Firebase prod project
+        if: env.FIREBASE_SERVICE_ACCOUNT_PROD_JSON != ''
+        env:
+          NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ format('{0}.firebaseapp.com', secrets.FIREBASE_PROJECT_PROD) }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_PROD }}
+          NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ format('{0}.firebasestorage.app', secrets.FIREBASE_PROJECT_PROD) }}
+          NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+          NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}

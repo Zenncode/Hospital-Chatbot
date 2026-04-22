@@ -94,12 +94,23 @@ Add these repository secrets:
 - `FIREBASE_SERVICE_ACCOUNT_DEV`
 - `FIREBASE_SERVICE_ACCOUNT_PROD`
 
+Add these environment-scoped secrets to both the `staging` and `production` GitHub environments:
+
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+
+If the service account secrets are not configured yet, the deploy workflow skips the Firebase deploy step and still runs validation.
+
 Recommended meaning:
 
 - `FIREBASE_PROJECT_DEV` = staging Firebase project ID
 - `FIREBASE_PROJECT_PROD` = production Firebase project ID
 - `FIREBASE_SERVICE_ACCOUNT_DEV` = service account JSON with deploy access to the staging Firebase project
 - `FIREBASE_SERVICE_ACCOUNT_PROD` = service account JSON with deploy access to the production Firebase project
+- `NEXT_PUBLIC_FIREBASE_API_KEY` = Firebase Web API key for the matching environment
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` = Firebase Web messaging sender ID for the matching environment
+- `NEXT_PUBLIC_FIREBASE_APP_ID` = Firebase Web app ID for the matching environment
 
 ## Git Branch Workflow
 
@@ -145,6 +156,8 @@ Branch mapping:
 - `prod` -> Firebase `prod`
 
 ## Local Deployment Commands
+
+Before local Firestore-backed testing or deploy validation, create a Cloud Firestore database in each project and choose the location intentionally because it is effectively permanent.
 
 Deploy to staging:
 

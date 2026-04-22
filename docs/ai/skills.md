@@ -118,6 +118,18 @@ Support predictable staging and production releases with separate Firebase proje
 - `.env.local.example`
 - `lib/firebase.ts`
 
+## 9A. Command Skills
+
+### Purpose
+
+Give the agent explicit command workflows for GitHub, Firebase, and repo verification tasks that are repeated often in this project.
+
+### Related Surface
+
+- `.agents/skills/github-repo-operations/SKILL.md`
+- `.agents/skills/firebase-deployment-operations/SKILL.md`
+- `.agents/skills/project-verification-commands/SKILL.md`
+
 ## 10. Documentation Generation
 
 ### Purpose
