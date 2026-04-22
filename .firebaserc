@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "your-firebase-dev-project-id",
-    "dev": "your-firebase-dev-project-id",
-    "prod": "your-firebase-prod-project-id"
+    "default": "hospital-chatbot-system-dev",
+    "dev": "hospital-chatbot-system-dev",
+    "prod": "hospital-chatbot-system-prod"
   }
 }
