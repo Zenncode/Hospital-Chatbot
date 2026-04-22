@@ -41,7 +41,7 @@ Maintain deterministic matching between user messages and approved FAQ or triage
 ### Related Surface
 
 - `lib/chatbot.ts`
-- `app/api/chatbot/route.ts`
+- `components/Chatbot.tsx`
 - `types/chatbot-settings.ts`
 
 ## 4. Symptom Safety Handling
