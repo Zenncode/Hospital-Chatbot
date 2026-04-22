@@ -58,7 +58,7 @@ The application does not use:
 ## Key Source Files
 
 - `lib/chatbot.ts`
-- `app/api/chatbot/route.ts`
+- `components/Chatbot.tsx`
 - `lib/data.ts`
 - `lib/firebase.ts`
 - `firestore.rules`
