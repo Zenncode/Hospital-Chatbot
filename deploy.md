@@ -45,6 +45,14 @@ firebase experiments:enable webframeworks
 - `FIREBASE_SERVICE_ACCOUNT_DEV`
 - `FIREBASE_SERVICE_ACCOUNT_PROD`
 
+Add these environment-scoped secrets to the `staging` and `production` GitHub environments so the Next.js build gets the correct Firebase web config during deploy:
+
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+
+If the service account secrets are still missing, the workflow now skips the deploy step instead of failing the whole push. Validation still runs.
+
 ## Branch Mapping
 
 - `develop` pushes deploy to the live channel of the Firebase `dev` project
@@ -64,7 +72,9 @@ firebase use --add
 - `dev` -> your staging Firebase project
 - `prod` -> your production Firebase project
 
-3. If Firebase Hosting config needs to be regenerated for Next.js:
+3. Create a Cloud Firestore database in each project before relying on authenticated reads or writes. Choose the region intentionally because the location is effectively permanent.
+
+4. If Firebase Hosting config needs to be regenerated for Next.js:
 
 ```powershell
 firebase init hosting

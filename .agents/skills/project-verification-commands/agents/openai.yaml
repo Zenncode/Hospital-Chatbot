@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Verification"
+  short_description: "Git, npm, and deployment verification checks"
+  default_prompt: "Use $project-verification-commands to inspect git state, run lint, build, and typecheck, and summarize what is verified or still blocked."
+
+policy:
+  allow_implicit_invocation: true

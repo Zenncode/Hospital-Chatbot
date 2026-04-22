@@ -1,0 +1,7 @@
+interface:
+  display_name: "Firebase Deploy Ops"
+  short_description: "Firebase auth, aliases, hosting, and deploys"
+  default_prompt: "Use $firebase-deployment-operations to verify auth, inspect project access, maintain dev and prod aliases, and troubleshoot deployment for hospital-chatbot-system."
+
+policy:
+  allow_implicit_invocation: true

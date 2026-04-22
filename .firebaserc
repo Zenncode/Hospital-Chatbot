@@ -1,7 +1,9 @@
 {
   "projects": {
-    "default": "hospital-chatbot-system-dev",
-    "dev": "hospital-chatbot-system-dev",
-    "prod": "hospital-chatbot-system-prod"
+    "default": "hospitalchatbotsystem",
+    "dev": "hospitalchatbotsystem",
+    "hospitalchatbotsystem": "hospitalchatbotsystem",
+    "prod": "hospitalchatbotsystem-prod",
+    "hospitalchatbotsystem-prod": "hospitalchatbotsystem-prod"
   }
 }

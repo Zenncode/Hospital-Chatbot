@@ -1,0 +1,7 @@
+interface:
+  display_name: "GitHub Repo Ops"
+  short_description: "GitHub remotes, repos, and branch pushes"
+  default_prompt: "Use $github-repo-operations to verify auth, attach the remote, and push main, develop, and prod for hospital-chatbot-system."
+
+policy:
+  allow_implicit_invocation: true

@@ -235,9 +235,15 @@ Paste your Firebase credentials here:
 NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+```
+
+For local production builds or `firebase deploy --project prod`, add the same keys to:
+
+```txt
+hospital-chatbot-system/.env.production.local
 ```
 
 This project reads those values from:
@@ -252,6 +258,8 @@ This repo also includes a committed `.firebaserc` and `firebase.json` for Fireba
 - alias `prod` should point to your production Firebase project
 
 Update `.firebaserc` with your real project IDs before local Firebase deploys.
+
+Create Cloud Firestore in each Firebase project before testing authenticated reads or writes. Pick the database location intentionally because it is effectively permanent for that project.
 
 ### 4. Enable Authentication
 

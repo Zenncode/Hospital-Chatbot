@@ -32,11 +32,19 @@ Set these repository secrets before expecting deploy workflows to succeed:
 - `FIREBASE_PROJECT_DEV`
 - `FIREBASE_PROJECT_PROD`
 
+Set these environment-scoped secrets in both `staging` and `production` before expecting the deploy workflow to build with the right Firebase web config:
+
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+
+Without the service account secrets, the workflow will still validate the app but will skip the Firebase deploy step.
+
 ## Bootstrap Steps
 
 1. Confirm or install the required CLIs.
 
-If `gh` or `gcloud` is missing, install them before continuing. The current machine already has `firebase` available, but `gh` and `gcloud` were not installed when this playbook was written.
+If `gh` or `gcloud` is missing, install them before continuing.
 
 2. Sign in to GitHub CLI:
 
@@ -105,6 +113,10 @@ Expected outcome:
 - `.firebaserc` points `default` and `dev` to the staging project
 - `.firebaserc` points `prod` to the production project
 
+Current project IDs in this repo:
+- `dev` -> `hospitalchatbotsystem`
+- `prod` -> `hospitalchatbotsystem-prod`
+
 11. If `firebase.json` needs to be regenerated for framework-aware Hosting, run:
 
 ```powershell
@@ -127,6 +139,19 @@ gh secret set FIREBASE_PROJECT_PROD --body "your-firebase-prod-project-id"
 gh secret set FIREBASE_SERVICE_ACCOUNT_DEV < .\secrets\firebase-dev-service-account.json
 gh secret set FIREBASE_SERVICE_ACCOUNT_PROD < .\secrets\firebase-prod-service-account.json
 ```
+
+Set environment-scoped web config secrets as well:
+
+```powershell
+gh secret set NEXT_PUBLIC_FIREBASE_API_KEY --env staging --body "your-dev-web-api-key"
+gh secret set NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID --env staging --body "your-dev-messaging-sender-id"
+gh secret set NEXT_PUBLIC_FIREBASE_APP_ID --env staging --body "your-dev-web-app-id"
+gh secret set NEXT_PUBLIC_FIREBASE_API_KEY --env production --body "your-prod-web-api-key"
+gh secret set NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID --env production --body "your-prod-messaging-sender-id"
+gh secret set NEXT_PUBLIC_FIREBASE_APP_ID --env production --body "your-prod-web-app-id"
+```
+
+13. Create Cloud Firestore in each Firebase project before relying on authenticated reads or writes. Choose the region intentionally because the location is effectively permanent.
 
 ## Deployment Model
 
