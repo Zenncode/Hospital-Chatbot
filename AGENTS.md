@@ -19,7 +19,7 @@ Build and maintain a fictional hospital website with a fixed-response chatbot, F
 ### Key Runtime Files
 
 - `lib/chatbot.ts` implements normalization, triage-first matching, FAQ scoring, and fallback behavior.
-- `app/api/chatbot/route.ts` exposes the chatbot response contract through the API route.
+- `components/Chatbot.tsx` runs the fixed-answer chatbot UI directly in the client using the same deterministic matching rules.
 - `lib/data.ts` handles Firestore reads and writes with demo-mode fallbacks where supported.
 - `lib/firebase.ts` controls Firebase initialization from environment variables.
 - `components/admin/*` contains the admin dashboard management UI.
