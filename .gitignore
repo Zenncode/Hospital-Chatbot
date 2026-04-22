@@ -3,7 +3,6 @@ node_modules
 out
 coverage
 .firebase
-.env.local
 .env*.local
 .vercel
 npm-debug.log*
@@ -12,3 +11,4 @@ yarn-error.log*
 pnpm-debug.log*
 firebase-debug.log
 *.tsbuildinfo
+config.bat
